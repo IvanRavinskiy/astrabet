@@ -3,13 +3,24 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "lint": "eslint .",
-    "start": "react-native start",
+    "clean": "find . -name '*.log' -type f -delete && rm -rf node_modules",
+    "clean-lockfile": "rm -rf package-lock.json yarn.lock",
+    "eslint": "eslint .",
+    "eslint-auto-fix-the-whole-project": "eslint . --fix",
+    "install-pods": "cd ios && pod install --repo-update",
+    "pod-repo-update": "cd ios && pod repo update",
+    "prettier-the-whole-project": "prettier --write '**/*.{css,js,json,jsx,markdown,md,scss,ts,tsx}'",
+    "reinstall-pods": "rm -rf ios/build ios/Pods ios/Podfile.lock && yarn install-pods",
+    "reset": "yarn run clean && yarn run setup && yarn run install-pods",
+    "reset-full": "yarn run clean && yarn run clean-lockfile && yarn run setup",
+    "run-android": "npx react-native run-android",
+    "run-ios": "npx react-native run-ios",
+    "setup": "yarn",
+    "start": "npx react-native start --reset-cache",
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^1.2.3",
     "react": "18.2.0",
     "react-native": "0.71.1"
   },
