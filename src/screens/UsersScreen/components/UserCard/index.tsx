@@ -1,10 +1,10 @@
-import React, {FC} from 'react';
+import React, {FC, memo} from 'react';
 import {Text, TouchableWithoutFeedback, View} from 'react-native';
 import {useState} from 'react';
 import {userCardStyles} from './styles';
 import {User} from '../../../../state/reducers/user';
 
-export const UserCard: FC<User> = props => {
+export const UserCard: FC<User> = memo(props => {
   const {name, company, address, username, phone, email} = props;
   const [show, setShow] = useState(false);
 
@@ -48,4 +48,4 @@ export const UserCard: FC<User> = props => {
       </View>
     </TouchableWithoutFeedback>
   );
-};
+});
