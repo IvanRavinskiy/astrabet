@@ -18,7 +18,7 @@ export const AuthScreen = () => {
 
   const dispatch = useAppDispatch();
   const onEnterPress = () => {
-    if (login === 'Admin' && password === 'admin') {
+    if (login === 'admin' && password === 'admin') {
       setLogin('');
       setPassword('');
       dispatch(SET_AUTH(true));

@@ -3,6 +3,8 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {UsersScreen} from '../screens/UsersScreen';
 import {StackNavigator} from './Stack';
 import {ROUTES} from '../constants/screens';
+import Users from '../../assets/minifyUsers.svg';
+import Photos from '../../assets/minifyPhotos.svg';
 
 type TabParamList = {
   [ROUTES.USERS]: undefined;
@@ -15,19 +17,22 @@ export const TabNavigator = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
+        tabBarShowLabel: false,
+        tabBarInactiveTintColor: 'white',
+        tabBarActiveTintColor: '#e3d6d8',
       }}>
       <Tab.Screen
         name={ROUTES.USERS}
         component={UsersScreen}
         options={{
-          tabBarLabel: 'Users',
+          tabBarIcon: ({color}) => <Users style={{backgroundColor: color}} />,
         }}
       />
       <Tab.Screen
         name={ROUTES.STACK}
         component={StackNavigator}
         options={{
-          tabBarLabel: 'Photos',
+          tabBarIcon: ({color}) => <Photos style={{backgroundColor: color}} />,
         }}
       />
     </Tab.Navigator>
