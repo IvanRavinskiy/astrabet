@@ -9,19 +9,23 @@ import {
 } from 'react-native';
 import {useState} from 'react';
 import {authScreenStyles} from './styles';
+import {useAppDispatch} from '../../state';
+import {SET_AUTH} from '../../state/reducers/auth';
 
 export const AuthScreen = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
 
+  const dispatch = useAppDispatch();
   const onEnterPress = () => {
     if (login === 'Admin' && password === 'admin') {
       setLogin('');
       setPassword('');
-      Alert.alert('SUCCESS!');
+      dispatch(SET_AUTH(true));
     } else {
       setLogin('');
       setPassword('');
+      dispatch(SET_AUTH(false));
       Alert.alert('Login or password are incorrect');
     }
   };
