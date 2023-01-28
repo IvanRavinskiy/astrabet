@@ -9,9 +9,11 @@ export enum AUTH {
 }
 
 export enum USER {
+  GET_USER = 'GET_USER',
   SET_USER = 'SET_USER',
 }
 
 export enum PHOTO {
+  GET_PHOTO = 'GET_PHOTO',
   SET_PHOTO = 'SET_PHOTO',
 }

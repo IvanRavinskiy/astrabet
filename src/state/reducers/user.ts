@@ -42,6 +42,9 @@ const userSlice = createSlice({
   name: SLICES.USER,
   initialState: SLICE_INITIAL,
   reducers: {
+    [USER.GET_USER](state) {
+      state.users = [];
+    },
     [USER.SET_USER](state, action: PayloadAction<User[]>) {
       state.users = action.payload;
     },
@@ -49,6 +52,6 @@ const userSlice = createSlice({
 });
 
 export const {reducer: userReducer} = userSlice;
-export const {SET_USER} = userSlice.actions;
+export const {GET_USER, SET_USER} = userSlice.actions;
 
 export const selectUsers = (state: RootState) => state.user.users;

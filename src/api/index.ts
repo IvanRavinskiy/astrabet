@@ -9,9 +9,13 @@ const instance = axios.create({
 
 export const api = {
   getUsers() {
-    return instance.get('users');
+    const response = instance.get('users');
+
+    return response.then(res => res.data);
   },
-  getPhotos(data: any) {
-    return instance.get('photos', {params: data});
+  getPhotos(data: number) {
+    const response = instance.get('photos', {params: {albumId: data}});
+
+    return response.then(res => res.data);
   },
 };

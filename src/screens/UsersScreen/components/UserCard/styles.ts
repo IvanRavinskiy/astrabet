@@ -12,6 +12,7 @@ export const userCardStyles = StyleSheet.create<UserCardStyles>({
     borderRadius: 30,
     paddingVertical: 10,
     paddingHorizontal: 20,
+    marginVertical: 5,
   },
   container: {
     flexDirection: 'row',

@@ -1,7 +1,7 @@
 import React from 'react';
-import {PhotosScreen} from './src/screens/PhotosScreen';
 import {Provider} from 'react-redux';
 import {store} from './src/state';
+import {PhotosScreen} from './src/screens/PhotosScreen';
 
 export const App = () => {
   return (
